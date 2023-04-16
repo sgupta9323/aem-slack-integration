@@ -4,7 +4,7 @@
 <comment>Slack AEM - Repository Structure Package</comment>
 <entry key="allowIndexDefinitions">false</entry>
 <entry key="name">aem-slack.ui.apps.structure</entry>
-<entry key="created">2023-04-16T16:59:59.739Z</entry>
+<entry key="created">2023-04-16T19:14:16.610Z</entry>
 <entry key="groupId">com.aem.slack</entry>
 <entry key="version">0.0.1-SNAPSHOT</entry>
 <entry key="packageType">mixed</entry>

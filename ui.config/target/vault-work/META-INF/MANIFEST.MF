@@ -1,6 +1,7 @@
 Manifest-Version: 1.0
 Implementation-Title: Slack AEM - UI config
-Content-Package-Roots: /apps/aemuser/osgiconfig
+Content-Package-Roots: /apps/aemslackdemo/osgiconfig,/apps/aemuser/osg
+ iconfig
 Implementation-Version: 0.0.1-SNAPSHOT
 Build-Jdk-Spec: 1.8
 Content-Package-Type: container

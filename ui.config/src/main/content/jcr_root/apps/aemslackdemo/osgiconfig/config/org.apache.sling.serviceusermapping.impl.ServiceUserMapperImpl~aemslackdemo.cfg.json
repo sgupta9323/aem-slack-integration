@@ -1,0 +1,4 @@
+{
+  "service.ranking"=I"0",
+"user.mapping"=["aem-slack.core:ACLReader\=[acluser]"]
+}
