@@ -4,7 +4,7 @@
 <comment>Slack AEM - UI apps</comment>
 <entry key="allowIndexDefinitions">false</entry>
 <entry key="name">aem-slack.ui.apps</entry>
-<entry key="created">2023-04-16T19:14:20.382Z</entry>
+<entry key="created">2023-04-16T20:29:21.964Z</entry>
 <entry key="groupId">com.aem.slack</entry>
 <entry key="dependencies-locations">adobe/cq60:core.wcm.components.content:2.17.12=maven:com.adobe.cq:core.wcm.components.content:2.17.12:zip,adobe/cq60:core.wcm.components.config:2.17.12=maven:com.adobe.cq:core.wcm.components.config:2.17.12:zip</entry>
 <entry key="version">0.0.1-SNAPSHOT</entry>

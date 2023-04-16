@@ -5,6 +5,6 @@ import java.util.List;
 public interface TicketDetails {
 	public List<Ticket> getTickets();
 
-	String getNextPagePath();
+	public String getNextPagePath();
 
 }
