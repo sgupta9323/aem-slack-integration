@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.3.0" name="com.aem.slack.core.servlets.AddAssignee">
+  <property name="service.description" type="String" value=" Send update to Slack"/>
+  <property name="sling.servlet.methods" type="String" value="POST"/>
+  <property name="sling.servlet.paths" type="String" value="/bin/ticketingsystem/addAssignee"/>
+  <service>
+    <provide interface="javax.servlet.Servlet"/>
+  </service>
+  <reference name="processComment" interface="com.aem.slack.core.service.ProcessComment" field="processComment"/>
+  <reference name="repository" interface="org.apache.sling.jcr.api.SlingRepository" field="repository"/>
+  <reference name="resolverFactory" interface="org.apache.sling.api.resource.ResourceResolverFactory" field="resolverFactory"/>
+  <implementation class="com.aem.slack.core.servlets.AddAssignee"/>
+</scr:component>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/conf/aemuser" mode="merge"/>
+    <filter root="/content/aemuser" mode="merge"/>
+    <filter root="/content/dam/aemuser/asset.jpg" mode="merge"/>
+    <filter root="/content/experience-fragments/aemuser" mode="merge"/>
+    <filter root="/content/tickets" mode="merge"/>
+    <filter root="/content/ABCorg" mode="merge"/>
+</workspaceFilter>

@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Implementation-Title: Slack AEM - Repository Structure Package
+Content-Package-Roots: /apps,/apps/aemuser,/apps/cq,/apps/dam,/apps/ms
+ m,/apps/settings,/apps/sling,/apps/wcm,/content/dam/aemuser
+Implementation-Version: 0.0.1-SNAPSHOT
+Build-Jdk-Spec: 1.8
+Content-Package-Type: mixed
+Created-By: Apache Jackrabbit FileVault - Package Maven Plugin 1.1.6
+Content-Package-Id: com.aem.slack:aem-slack.ui.apps.structure:0.0.1-SN
+ APSHOT
+Content-Package-Description: Empty package that defines the structure 
+ of the Adobe Experience Manager repository the Code packages in this 
+ project deploy into.
+         Any roots in the Code packages of this 
+ project should have their parent enumerated in the Filters list below
+ .
+

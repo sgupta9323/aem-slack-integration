@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Implementation-Title: Slack AEM - UI content
+Content-Package-Roots: /conf/aemuser,/content/ABCorg,/content/aemuser,
+ /content/dam/aemuser/asset.jpg,/content/experience-fragments/aemuser,
+ /content/tickets
+Implementation-Version: 0.0.1-SNAPSHOT
+Content-Package-Dependencies-Locations: com.aem.slack:aem-slack.ui.app
+ s:0.0.1-SNAPSHOT=maven:com.aem.slack:aem-slack.ui.apps:0.0.1-SNAPSHOT
+ :zip
+Content-Package-Dependencies: com.aem.slack:aem-slack.ui.apps:0.0.1-SN
+ APSHOT
+Build-Jdk-Spec: 1.8
+Content-Package-Type: content
+Created-By: Apache Jackrabbit FileVault - Package Maven Plugin 1.1.6
+Content-Package-Id: com.aem.slack:aem-slack.ui.content:0.0.1-SNAPSHOT
+Content-Package-Description: UI content package for Slack AEM
+

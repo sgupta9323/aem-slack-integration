@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: Slack AEM - UI config
+Content-Package-Roots: /apps/aemuser/osgiconfig
+Implementation-Version: 0.0.1-SNAPSHOT
+Build-Jdk-Spec: 1.8
+Content-Package-Type: container
+Created-By: Apache Jackrabbit FileVault - Package Maven Plugin 1.1.6
+Content-Package-Id: com.aem.slack:aem-slack.ui.config:0.0.1-SNAPSHOT
+Content-Package-Description: UI config package for Slack AEM
+

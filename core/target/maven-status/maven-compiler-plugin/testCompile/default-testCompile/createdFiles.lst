@@ -1,0 +1,7 @@
+com\aem\slack\core\schedulers\SimpleScheduledTaskTest.class
+com\aem\slack\core\listeners\SimpleResourceListenerTest.class
+com\aem\slack\core\filters\LoggingFilterTest.class
+com\aem\slack\core\servlets\SimpleServletTest.class
+com\aem\slack\core\testcontext\AppAemContext.class
+com\aem\slack\core\models\HelloWorldModelTest.class
+com\aem\slack\core\testcontext\AppAemContext$1.class

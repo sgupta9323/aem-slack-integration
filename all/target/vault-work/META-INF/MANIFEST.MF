@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Implementation-Title: Slack AEM - All
+Content-Package-Roots: /apps/aemuser-packages,/apps/aemuser-vendor-pac
+ kages
+Implementation-Version: 0.0.1-SNAPSHOT
+Build-Jdk-Spec: 1.8
+Content-Package-Type: container
+Created-By: Apache Jackrabbit FileVault - Package Maven Plugin 1.1.6
+Content-Package-Id: com.aem.slack:aem-slack.all:0.0.1-SNAPSHOT
+Content-Package-Description: All content package for Slack AEM
+

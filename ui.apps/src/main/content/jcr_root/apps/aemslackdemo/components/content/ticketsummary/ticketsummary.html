@@ -1,0 +1,158 @@
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html">
+    <sly data-sly-call="${clientlib.all @ categories='aemslackdemo.components.ticketlist'}"/>
+</sly>
+
+<div data-sly-use.ticketItem="com.aem.slack.core.models.TicketSummary"></div>
+<sly data-sly-test.ticket="${ticketItem.ticketSummary}" />
+<div class="header">
+                <h2>
+                    Ticket Summary
+                </h2>
+            </div>
+<div class="body">
+                <div class="table-responsive">
+<!-- <div>${ticketItem.ticketSummary.ticketNum}</div> -->
+<table class="table table-bordered table-striped table-hover geeks-table dataTable">
+<tr>
+<td>Ticket Number : </td>
+<td>${ticket.ticketNum}</td>
+</tr>
+<tr>
+<td>Ticket Description : </td>
+<td>${ticket.ticketDesc}</td>
+</tr>
+<tr>
+<td>Ticket Raised By : </td>
+<td>${ticket.raisedBy}</td>
+</tr>
+<tr>
+<td>Ticket Status : </td>
+
+<td>${ticket.ticketStatus}</td>
+</tr>
+<tr>
+<td>Ticket Assignee : </td> 
+<td><input type="text" id="assignee" name="assignee" value=${ticket.ticketAssignee}> <button id="addAssigneeId" class="btn btn-success waves-effect">Add Assignee</button> </td>
+</tr>
+</table>
+</div>
+</div>
+<div class="header">
+                <h2>
+                    Comment History
+                </h2>
+            </div>
+<div data-sly-list.comment="${ticket.commentList}">
+<div><textarea disabled class="commentareaclass" name="commentarea" id="commentarea" placeholder="Please add your comments here" autocomplete="off"  cols="160">${comment.commentText}</textarea>
+<div>By : ${comment.commentBy} </div>
+</div>
+</div>
+<div><textarea class="commentareaclass" name="commentarea" id="commentAreaId" placeholder="Please add your comments here" autocomplete="off" rows="4" cols="160"></textarea></div>
+
+                <table>
+                <td><div><button class="btn btn-success waves-effect" id="commentBtnId" >Add Comment</button> </div></td>
+                <td width="20px">    </td>
+                <td><button id="closeBtnId" class="btn btn-success waves-effect">Close Ticket</button></td></table>
+<div hidden=true id="ticketId">${ticket.ticketNum}</div>
+
+<script>
+
+$('#commentBtnId').click(function() {
+        //alert("clicked the add comment");
+        var commentText = $('#commentAreaId').val();
+        //alert("commentText:  "+commentText);
+        var ticketNo = $('#ticketId').text();
+        //alert("ticketNo:  "+ticketNo);
+        var sFilterData = '"'+ticketNo+'"__'+commentText;
+		//alert("sFilterData:  "+sFilterData);
+        if(commentText === ""){
+			alert("Please provide your comments in the Comment Box");
+        }else{
+            $.ajax({
+                type: 'POST',
+                    url:'/bin/ticketingsystem/addComment',
+                    data:'sFilterData='+ sFilterData,
+                 success: function(msg){
+                    //alert("Response Recieved"+msg);
+                        if(msg != null){
+                        alert("Comment Added Successfully :: "+msg);
+                        location.reload(true);
+
+                         }
+                    }
+            });
+        }
+    });
+
+
+$('#closeBtnId').click(function() {
+        //alert("clicked the add comment");
+        var commentText = $('#commentAreaId').val();
+        //alert("commentText:  "+commentText);
+        var ticketNo = $('#ticketId').text();
+        //alert("ticketNo:  "+ticketNo);
+        var sFilterData = '"'+ticketNo+'"__'+commentText;
+		//alert("sFilterData:  "+sFilterData);
+
+        if(commentText === ""){
+			alert("Please provide your comments in the Comment Box before closing the Ticket");
+        }else{
+
+            $.ajax({
+                type: 'POST',    
+                    url:'/bin/ticketingsystem/closeTicket',
+    
+                    data:'sFilterData='+ sFilterData,
+    
+                 success: function(msg){
+                    //alert("Response Recieved"+msg);
+
+                        if(msg != null){
+                        alert("Ticket Closed Successfully :: "+msg);
+                        location.reload(true);
+
+    
+    
+                         }
+    
+
+                    }
+            });
+
+        }
+
+
+    });
+
+
+$('#addAssigneeId').click(function() {
+       // alert("clicked the add comment");
+
+        var assigneeText = $('#assignee').val();
+        //alert("commentText:  "+commentText);
+        var ticketNo = $('#ticketId').text();
+        //alert("ticketNo:  "+ticketNo);
+        var sFilterData = '"'+ticketNo+'"__'+assigneeText;
+		alert("sFilterData:  "+sFilterData);
+      //  return;
+        if(assigneeText === ""){
+			alert("Please provide your comments in the Comment Box");
+        }else{
+            $.ajax({
+                type: 'POST',
+                    url:'/bin/ticketingsystem/addAssignee',
+                    data:'sFilterData='+ sFilterData,
+                 success: function(msg){
+                    //alert("Response Recieved"+msg);
+                        if(msg != null){
+                        alert("Assignee Added Successfully :: "+msg);
+                        location.reload(true);
+
+                         }
+                    }
+            });
+        }
+    });
+
+
+</script>

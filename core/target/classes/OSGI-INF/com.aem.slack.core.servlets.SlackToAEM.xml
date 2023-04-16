@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.3.0" name="com.aem.slack.core.servlets.SlackToAEM">
+  <property name="service.description" type="String" value=" Create ticket from slack bot"/>
+  <property name="sling.servlet.methods" type="String" value="POST"/>
+  <property name="sling.servlet.paths" type="String" value="/bin/ticketingsystem/createticket"/>
+  <service>
+    <provide interface="javax.servlet.Servlet"/>
+  </service>
+  <reference name="resolverFactory" interface="org.apache.sling.api.resource.ResourceResolverFactory" field="resolverFactory"/>
+  <implementation class="com.aem.slack.core.servlets.SlackToAEM"/>
+</scr:component>

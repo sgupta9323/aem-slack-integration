@@ -1,0 +1,52 @@
+
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html">
+    <sly data-sly-call="${clientlib.all @ categories='aemslackdemo.components.ticketlist'}"/>
+</sly>
+
+<!-- Table -->
+<div data-sly-use.ticketDetails="com.aem.slack.core.models.TicketDetails"></div>
+
+<div class="row clearfix">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card">
+            <div class="header">
+                <h2>
+                    List Of Employee Tickets
+                </h2>
+            </div>
+            <div class="body">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped table-hover geeks-table dataTable">
+                        <thead>
+                        <tr>
+                            <th>Ticket Number</th>
+                            <th>Ticket Description</th>
+                            <th>Raised By</th>
+                            <th>Status</th>
+                            <th>Assigned To</th>
+                            <th>Details</th>
+
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                        <sly data-sly-test.ticketSummaryPath="${ticketDetails.nextPagePath}" />
+                        <div data-sly-list.ticket="${ticketDetails.tickets}">
+                            <tr>
+                                <td>${ticket.ticketNum}</td>
+                                <td>${ticket.ticketDesc}</td>
+                                <td>${ticket.raisedBy}</td>
+                                <td>${ticket.ticketStatus}</td>
+                                <td>${ticket.ticketAssignee}</td>
+<td><input type="button" class="btn btn-success waves-effect" onclick="location.href='${ticketSummaryPath @ context='text'}.html?ticketId=${ticket.ticketNum @ context='scriptString'}'"  value="Details"/></td>
+                                </td>
+                            </tr>
+                        </div>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- #END# Table -->

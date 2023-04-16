@@ -1,0 +1,4 @@
+com\aem\slack\it\tests\GetPageIT.class
+com\aem\slack\it\tests\CreatePageIT.class
+com\aem\slack\it\tests\PublishPageValidationIT.class
+com\aem\slack\it\tests\HtmlUnitClient.class
