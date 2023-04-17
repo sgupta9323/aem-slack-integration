@@ -1,3 +1,5 @@
+# aem-slack-integration
+
 This aem-slack-integration project enables integration between Adobe Experience Manager(AEM) and Slack and helps setup a basic Ticket portal for ABC Org. This project will enable bidirectional connection between AEM and Slack. Messages from Slack using a Slack BOT would be saved and displayed as Tickets in AEM and comments would flow seamlessly from Slack to AEM and AEM to Slack.
 
 The project will enable functionalities like:
