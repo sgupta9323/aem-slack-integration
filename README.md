@@ -34,4 +34,6 @@ Pre-requisite installations:
   
   - Setup NGORK by following steps in https://ngrok.com/docs/getting-started/
   
+  Please find below LINK TO DOWNLOAD RELEVANT ARTIFACTS for this project:
+  https://www.dropbox.com/scl/fo/jmrb473o2w0hibtqpa86d/h?dl=0&rlkey=fgm7zi1flflwc4ekcr3j7oqe1
 You are ready to go!!
