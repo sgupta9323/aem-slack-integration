@@ -1,42 +1,35 @@
-# aem-slack-integration
-This is a project where Adobe Experience Manager(AEM) and Slack messaging channel have been integrated bidirectionally for capturing slack message and coverting them into tickets on AEM platform.
+This aem-slack-integration project enables integration between Adobe Experience Manager(AEM) and Slack and helps setup a basic Ticket portal for ABC Org. This project will enable bidirectional connection between AEM and Slack. Messages from Slack using a Slack BOT would be saved and displayed as Tickets in AEM and comments would flow seamlessly from Slack to AEM and AEM to Slack.
 
-Features:
- - Collates all slack message query from slack channel and pushed them into AEM.
- - AEM populates the slack message queries saved as nodes in JCR to UI.
- - Tracks all the queries on slack without queries getting lost.
- - Support Team can work and reply on queries from AEM user friendly UI whcih allows better managing of ticket.
+The project will enable functionalities like:
+
+ - Raise a query from Slack channel
+ - Store these queries raised on Slack channel as Tickets in AEM
+ - Display list of all open tickets
+ - Display the complete details of a selected Ticket
+ - Assign the Ticket to a user
+ - Post comments on a Ticket
+ - Close the Ticket
  
-
+ 
 Pre-requisite installations:
+
  - AEM
- - create one system user named "acluser" with all rights to root node.
- - Slack account on https://slack.com/intl/en-in/get-started#/createnew
- -  configuring slash command and pointing it to your AEM domain (ngrok URL)
- - Ngrok setup https://ngrok.com/docs/getting-started/
+ - Slack account with a Channel available in your workspace; https://slack.com/intl/en-in/get-started#/createnew
+ - Ngrok setup to expose your local AEM over internet; https://ngrok.com/docs/getting-started/
  
- Setup 
-  - Create a slack account on https://slack.com/intl/en-in/get-started#/createnew
-  - Create a Slack Channel .
-  - Go to https://api.slack.com/ 
-  - Click on "create an app"
-  - After creating an app, go to left hand side column and open slash command.
-  - Click on "create new command" , make sure to enter your ngrok URL if using localhost AEM setup in request URL.
+ 
+ Setup
+ 
+  - Go to https://api.slack.com/
+  - Create an app by clicking on "create an app" and attach it to your Slack workspace
+  - open the Slack app created and create a slash command.
+  - Create a new command by clicking on "create new command" , make sure to enter your ngrok URL if using localhost AEM setup in request URL.
   - Click on Save.
   - Now, in the same app, open "incoming webhook" and take a note of the webhook URL mentioned.
+  - Ensure the App has the scopes assigned as “commands” and “Incoming-webhook” in OAuth&Permissions
   
-  Flow:
-  1. Flow of messages from Slack to AEM.
-    - Slash Commands in Slack enablesyou to register and advertise specific commands for your app. With this project, you would need to create one servlet "SlackToAEM" which slack will call when any user will use the slack command.
-    - Data from this servlet request call from Slack will be saved in AEM node structure.
-    - AEM will then render these saved nodes (queries from slack) to AEM UI.
-  2. Flow from AEM to Slack
-    - Comments added to AEM UI will also be sent back to Slack for users to see responses of their query.
-    - Incoming webhook URL of Slack lets external applications (AEM) to share content to Slack. 
-    - We have used incoming webhook URL in servlet "AEMToSlack".
+  - Setup AEM following steps in https://experienceleague.adobe.com/docs/experience-manager-65/deploying/deploying/deploy.html?lang=en
   
- 
- 
- 
- 
-
+  - Setup NGORK by following steps in https://ngrok.com/docs/getting-started/
+  
+You are ready to go!!
